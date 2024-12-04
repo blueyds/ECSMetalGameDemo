@@ -1,0 +1,15 @@
+{
+  "originHash" : "fb044bb5d07503b31f98094258aa177746c735bb73a2740f4e2dfcfd1f2cde35",
+  "pins" : [
+    {
+      "identity" : "metalview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/blueyds/MetalView.git",
+      "state" : {
+        "revision" : "947f4574b604ecfa57e01a5a5b64b4aef460eefd",
+        "version" : "6.0.11"
+      }
+    }
+  ],
+  "version" : 3
+}
