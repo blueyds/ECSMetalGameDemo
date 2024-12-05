@@ -16,9 +16,9 @@ public class TriangleComponent: Component, VertexCollectionProtocol {
 
 	public var vertices: [Vertex] = []
 	public init(color: SIMD4<Float>){
-		vertices.append(Vertex(x: 0, y: 0.5, color: color)) // TOP
-		vertices.append(Vertex(x: 0.5, y: -0.5, color: color)) // BR
-		vertices.append(Vertex(x: -0.5, y: -0.5, color: color)) // BL
+		vertices.append(Vertex(x:  0.0, y:  0.5, u: 0.5, v: 0, color: color)) // TOP
+		vertices.append(Vertex(x:  0.5, y: -0.5, u: 1.0, v: 1, color: color)) // BR
+		vertices.append(Vertex(x: -0.5, y: -0.5, u: 0.0, v: 1, color: color)) // BL
 	}
 
 
