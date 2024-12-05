@@ -1,0 +1,9 @@
+## XCode Patch
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcsharedata/
+!*.xcodeproj/contents.xcworkspacedata
+**/xcsharedata/WorkspaceSettings.xcsettings
+
+
+*clipboard.txt
