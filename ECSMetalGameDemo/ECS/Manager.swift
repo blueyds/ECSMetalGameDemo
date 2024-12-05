@@ -1,4 +1,4 @@
-class Manager{
+public class Manager{
     static internal var lastComponentTypeID: Int = 0
     static public func getNewComponentTypeID() -> Int {
         Manager.lastComponentTypeID += 1
