@@ -7,7 +7,8 @@ public class Manager{
     private var entities: [Entity] = []
     public func update(){
         entities.forEach(){ $0.update()}
-		entities.forEach(){ $0.preDraw()}
+	entities.forEach(){ $0.postUpdate()}
+	entities.forEach(){ $0.preDraw()}
     }
 	
     public func draw(renderer: Renderer){

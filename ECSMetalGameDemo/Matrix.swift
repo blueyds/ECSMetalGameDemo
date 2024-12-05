@@ -74,16 +74,5 @@ extension Matrix{
     }
     
 //    
-//    public static func perspective(degreesFov fov: Float, aspectRatio: Float, nearZ: Float, farZ: Float )-> Matrix {
-//        var result = Matrix.identity
-//        let ys = 1 / tanf(fov.fromDegrees * 0.5)
-//        let xs = ys / aspectRatio
-//        let zs = farZ / (nearZ - farZ)
-//        result.columns = (
-//            SIMD4<Float>(xs,  0, 0,   0),
-//            SIMD4<Float>( 0, ys, 0,   0),
-//            SIMD4<Float>( 0,  0, zs, -1),
-//            SIMD4<Float>( 0,  0, zs * nearZ, 0))
-//        return result
-//    }
+//    
 }

@@ -8,18 +8,20 @@
 import Foundation
 public protocol SceneProtocol: AnyObject{
 	var manager: Manager { get }
-	var camera: Entity { get }
+	var camera: Camera? { get }
 }
 
 extension SceneProtocol{
 	public func draw(using renderer: Renderer){
-		if let cameraComponent: CameraComponent = camera.get(){
-			var viewMatrix = cameraComponent.viewMatrix
-			guard let rCE = renderer.rCE else { return}
-			rCE.setVertexBytes(&viewMatrix, length: Matrix.stride(), index: 2)
-			manager.draw(renderer: renderer)
+		if camera != nil {
+			var viewMatrix = camera!.viewMatrix
+			renderer!.rCE.setVertexBytes(&viewMatrix, length: Matrix.stride(), index: 2)
+			var projectionMatrix = camera!.projectionMatrix
+			renderer!.rCE.setVertexBytes(&projectionMatrix, length: Matrix.stride(), index: 3)
 		}
+		manager.draw(renderer: renderer)
 	}
+
 	public func update(){
 		manager.update()
 	}

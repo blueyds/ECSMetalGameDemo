@@ -20,10 +20,10 @@ struct RasterizerData{
 };
 
 
-vertex RasterizerData basic_vertex_shader(const device VertexIn *vertices [[ buffer(0)]],  constant float4x4 &modelMatrix [[ buffer(1) ]], constant float4x4 &viewMatrix [[ buffer(2) ]], uint vertexID [[vertex_id ]]){
+vertex RasterizerData basic_vertex_shader(const device VertexIn *vertices [[ buffer(0)]],  constant float4x4 &modelMatrix [[ buffer(1) ]], constant float4x4 &viewMatrix [[ buffer(2) ]], constant float4x4 &projectionMatrix [[ buffer(3) ]], uint vertexID [[vertex_id ]]){
 	RasterizerData rd;
 	float4 position = float4(vertices[vertexID].position, 1);
-	rd.position = viewMatrix * modelMatrix * position;
+	rd.position = projectionMatrix * viewMatrix * modelMatrix * position;
 	rd.color = vertices[vertexID].color;
 	return rd;
 }

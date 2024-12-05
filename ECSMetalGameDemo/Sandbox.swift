@@ -3,13 +3,13 @@ import SwiftUI
 class Sandbox: SceneProtocol{
     let player: Entity
     let  manager: Manager
-    let camera: Entity
+    let camera: Camera? = nil
 
     var color: SIMD4<Float> = .blue
     init(){
         manager = Manager()
         player = manager.addNewEntity()
-		camera = manager.addNewEntity()
+	camera = manager.addNewEntity()
 
         player.add(component: TransformComponent(x: 0, y: 0))
 	player.add(component: TriangleComponent(color: .purple))

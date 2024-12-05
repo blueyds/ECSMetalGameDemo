@@ -11,6 +11,12 @@ public class Entity:Identifiable{
             component.update()
         }
     }
+    public func postUpdate(){ 
+        components.forEach{ _, component in 
+            component.postUpdate()
+        }
+    }
+    
 	public func preDraw(){
 		components.forEach{ _, component in
 			component.preDraw()
