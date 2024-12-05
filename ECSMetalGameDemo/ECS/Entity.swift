@@ -23,10 +23,11 @@ public class Entity:Identifiable{
             component.draw(renderer: renderer)    
         }
     }
-    public func add<T: Component>(component:  T){
+	public func add<T: Component>(component:  T)-> T{
         component.entity = self
 		component.setup()
         components.updateValue(component, forKey: T.typeID)
+		return component
     }
     public func remove<T: Component>(componentOfType: T.Type){
         components.removeValue(forKey: T.typeID)
