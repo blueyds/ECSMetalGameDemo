@@ -7,12 +7,14 @@ public class GameRenderer: Renderer {
     let device = MTLCreateSystemDefaultDevice()
     let clearColor = SIMD4<Float>.gray.mtlClearColor
     let pixelFormat: MTLPixelFormat = .bgra8Unorm
+	let depthPixelFormat: MTLPixelFormat = .depth32Float
     var defaultRenderPipeline: MTLRenderPipelineState? = nil
-    var rCE: MTLRenderCommandEncoder? = nil
-    var depthStencilStte: MTLDepthStencilState? = nil
+    public var rCE: MTLRenderCommandEncoder? = nil
+    var depthStencilState: MTLDepthStencilState? = nil
     init(){
+		createDepthStencilState()	
         createRenderPipelineState()
-createDepthStencilState()	
+
     }
     func set(renderCommandEncoder: MTLRenderCommandEncoder){
         rCE = renderCommandEncoder
@@ -29,6 +31,9 @@ createDepthStencilState()
         let fragmentFunction = library!.makeFunction(name: "basic_fragment_shader")
         let renderPipelineDescriptore = MTLRenderPipelineDescriptor()
         renderPipelineDescriptore.colorAttachments[0].pixelFormat = pixelFormat
+		if depthStencilState != nil {
+			renderPipelineDescriptore.depthAttachmentPixelFormat = depthPixelFormat
+		}
         renderPipelineDescriptore.vertexFunction = vertexFunction
         renderPipelineDescriptore.fragmentFunction = fragmentFunction
         do{
@@ -38,10 +43,10 @@ createDepthStencilState()
         }
     }
     func createDepthStencilState(){
-	let depthStencilDescriptor = MTLDepthStencilStateDescriptor()
+		let depthStencilDescriptor = MTLDepthStencilDescriptor()
 	depthStencilDescriptor.isDepthWriteEnabled = true
 	depthStencilDescriptor.depthCompareFunction = .less
-	depthStencilState = device.makeDepthStencilState(descriptor: depthStencilDescriptor)
+	depthStencilState = device?.makeDepthStencilState(descriptor: depthStencilDescriptor)
     }
     
 }

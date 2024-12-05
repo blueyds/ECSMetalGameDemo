@@ -16,10 +16,8 @@ extension VertexCollectionProtocol {
 	}
 	public func draw(renderer: Renderer){
 		guard let rCE = renderer.rCE else { return }
-		if transform != nil {
-			var modelMatrix = transform!.modelMatrix
-			rCE.setVertexBytes(&modelMatrix, length: Matrix.stride(), index: 1)
-		}
+		var modelMatrix = transform?.modelMatrix  ?? .identity
+		rCE.setVertexBytes(&modelMatrix, length: Matrix.stride(), index: 1)
 
 		rCE.setVertexBytes(vertices, length: Vertex.stride(of: vertices.count), index: 0)
 		rCE.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertices.count)

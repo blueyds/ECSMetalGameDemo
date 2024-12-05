@@ -1,7 +1,7 @@
 import Foundation
 import simd
 
-public class ColoredTile: Component, VertexCollectionProtocol{
+public class QuadComponent: Component, VertexCollectionProtocol{
     public var entity: Entity?
     public var transform: TransformComponent?
     static public let typeID: Int = Manager.getNewComponentTypeID()

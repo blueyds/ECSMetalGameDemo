@@ -7,7 +7,7 @@ let game = Sandbox()
 struct ContentView: View {
     var body: some View {
         VStack {
-            MetalView(device: renderer.device, clearColor: renderer.clearColor, colorPixelFormat: renderer.pixelFormat)
+			MetalView(device: engine.device, clearColor: engine.clearColor, colorPixelFormat: engine.pixelFormat, depthPixelFormat: engine.depthPixelFormat)
 				.onUpdate {
 					game.update()
 				}
