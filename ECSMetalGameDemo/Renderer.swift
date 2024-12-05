@@ -1,19 +1,26 @@
 import Foundation
 import MetalKit
-
-public class Renderer {
+public protocol Renderer{
+	var rCE: MTLRenderCommandEncoder? { get }
+}
+public class GameRenderer: Renderer {
     let device = MTLCreateSystemDefaultDevice()
     let clearColor = SIMD4<Float>.gray.mtlClearColor
     let pixelFormat: MTLPixelFormat = .bgra8Unorm
     var defaultRenderPipeline: MTLRenderPipelineState? = nil
     var rCE: MTLRenderCommandEncoder? = nil
+    var depthStencilStte: MTLDepthStencilState? = nil
     init(){
-        createRenderPipelineState()    
+        createRenderPipelineState()
+createDepthStencilState()	
     }
     func set(renderCommandEncoder: MTLRenderCommandEncoder){
         rCE = renderCommandEncoder
         if defaultRenderPipeline != nil {
             rCE?.setRenderPipelineState(defaultRenderPipeline!)
+    }
+        if depthStencilState != nil{
+		rCE?.setDepthStencilState(depthStencilState!)
         }
     }
     func createRenderPipelineState(){
@@ -30,7 +37,11 @@ public class Renderer {
             print(error)
         }
     }
-
-
+    func createDepthStencilState(){
+	let depthStencilDescriptor = MTLDepthStencilStateDescriptor()
+	depthStencilDescriptor.isDepthWriteEnabled = true
+	depthStencilDescriptor.depthCompareFunction = .less
+	depthStencilState = device.makeDepthStencilState(descriptor: depthStencilDescriptor)
+    }
     
 }

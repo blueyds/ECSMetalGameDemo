@@ -21,7 +21,7 @@ class Sandbox: SceneProtocol{
 }	
 	func addNewTile(x: Float, y: Float, color: SIMD4<Float>){
 		let tile = manager.addNewEntity()
-		tile.add(component: TransformComponent(x: x, y: y))
+		tile.add(component: TransformComponent(x: x, y: y, z: 5))
 		tile.add(component: ColoredTile(color: color))
 	}
     func setupECS(){

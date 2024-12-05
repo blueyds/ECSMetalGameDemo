@@ -2,7 +2,7 @@ import SwiftUI
 import MetalView
 import simd
 
-let renderer = Renderer()
+let engine = GameRenderer()
 let game = Sandbox()
 struct ContentView: View {
     var body: some View {
@@ -12,8 +12,8 @@ struct ContentView: View {
 					game.update()
 				}
                 .onRender(){encoder in
-                    renderer.set(renderCommandEncoder: encoder)
-                    game.draw(using: renderer)
+                    engine.set(renderCommandEncoder: encoder)
+                    game.draw(using: engine)
                     
                 }
             Text("Hello, world!")
