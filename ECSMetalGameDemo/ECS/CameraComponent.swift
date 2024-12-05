@@ -7,7 +7,7 @@ public class CameraComponent: Component{
 	public var following: TransformComponent? = nil
 	public var viewMatrix: Matrix = .identity
 	init(following: Entity?){
-		self.following = following.get()
+		self.following = following?.get()
 	}
 	public func preDraw(){
 		guard let position = following?.position else {
