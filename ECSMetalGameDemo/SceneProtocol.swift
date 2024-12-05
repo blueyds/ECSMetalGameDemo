@@ -15,11 +15,12 @@ extension SceneProtocol{
 	public func draw(using renderer: Renderer){
 		if camera != nil {
 			var viewMatrix = camera!.viewMatrix
-			renderer!.rCE.setVertexBytes(&viewMatrix, length: Matrix.stride(), index: 2)
+			renderer.rCE!.setVertexBytes(&viewMatrix, length: Matrix.stride(), index: 2)
 			var projectionMatrix = camera!.projectionMatrix
-			renderer!.rCE.setVertexBytes(&projectionMatrix, length: Matrix.stride(), index: 3)
-		}
-		manager.draw(renderer: renderer)
+			renderer.rCE!.setVertexBytes(&projectionMatrix, length: Matrix.stride(), index: 3)
+			manager.draw(renderer: renderer)
+		} else {print("camera is nil")}
+
 	}
 
 	public func update(){
