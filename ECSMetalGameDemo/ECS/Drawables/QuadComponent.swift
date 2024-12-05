@@ -8,12 +8,12 @@ public class QuadComponent: Component, VertexCollectionProtocol{
     
     public var vertices: [Vertex] = []
     public init(color: SIMD4<Float>){
-        vertices.append(Vertex(x: 0, y: 1, color: color))
-        vertices.append(Vertex(x: 1, y: 1, color: color))
-        vertices.append(Vertex(x: 0, y: 0, color: color))
-        vertices.append(Vertex(x: 0, y: 0, color: color))
-        vertices.append(Vertex(x: 1, y: 1, color: color))
-        vertices.append(Vertex(x: 1, y: 0, color: color))
+        vertices.append(Vertex(x: -0.5, y: 0.5, color: color)) // TL
+        vertices.append(Vertex(x: 0.5, y: 0.5, color: color)) // TR
+        vertices.append(Vertex(x: -0.5, y: -0.5, color: color)) // BL
+        vertices.append(Vertex(x: -0.5, y: -0.5, color: color)) // BL
+        vertices.append(Vertex(x: 0.5, y: 0.5, color: color)) // TR
+        vertices.append(Vertex(x: 0.5 , y: -0.5, color: color)) // BR
     }
 
 }
