@@ -3,20 +3,21 @@ import SwiftUI
 class Sandbox{
     let player: Entity
     let  manager: Manager
-    
+    let camera: Entity
 
     var color: SIMD4<Float> = .blue
     init(){
         manager = Manager()
         player = manager.addNewEntity()
         player.add(component: TransformComponent(x: -1, y: -1))
-		player.add(component: TriangleComponent(color: .purple))
-		addNewTile(x: -1, y: 0, color: .red)
-		addNewTile(x: 0, y: 0, color: .blue)
-		//addNewTile(x: -1, y: -1, color: .yellow)
-		addNewTile(x: 0, y: -1, color: .green)
-
-    }
+	player.add(component: TriangleComponent(color: .purple))
+	addNewTile(x: -1, y: 0, color: .red)
+	addNewTile(x: 0, y: 0, color: .blue)
+	//addNewTile(x: -1, y: -1, color: .yellow)
+	addNewTile(x: 0, y: -1, color: .green)
+	camera = manager.addNewEntity()
+	camera.add(component: CameraComponent(following: player))
+}	
 	func addNewTile(x: Float, y: Float, color: SIMD4<Float>){
 		let tile = manager.addNewEntity()
 		tile.add(component: TransformComponent(x: x, y: y))
@@ -29,6 +30,12 @@ class Sandbox{
 		manager.update()
 	}
     func draw(using renderer: Renderer){
+    	let cameraComponent: CameraComponent = camera?.get()
+    	if cameraComponent != nil {
+    		var viewMatrix = cameraComponent.viewMatrix
+    		guard let rCE = renderer.rCE else { return}
+    		rCE.setVertexBytes(&viewMatrix, Matrix.stride(), index: 2)	
+    	}
         manager.draw(renderer: renderer)
 //        renderer.rCE?.setVertexBytes(vertices, length: MemoryLayout<Vertex>.stride * vertices.count, index: 0)
 //        renderer.rCE?.setFragmentBytes(&color, length: MemoryLayout<SIMD4<Float>>.stride, index: 1)

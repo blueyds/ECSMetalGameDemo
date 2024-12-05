@@ -11,7 +11,7 @@ public class TransformComponent: Component{
 		position = SIMD3(x, y, z)
 	}
     public func preDraw() {
-        modelMatrix = matrix_identity_float4x4
+        modelMatrix = .identity
         modelMatrix.translateModel(position)
 
     }
