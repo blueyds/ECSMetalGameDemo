@@ -10,7 +10,7 @@ public class Manager{
 		entities.forEach(){ $0.preDraw()}
     }
 	
-    public func draw(renderer: Renderer){
+    public func draw(renderer: any Renderer){
         entities.forEach(){ $0.draw(renderer: renderer)}
     }
     public func refresh(){

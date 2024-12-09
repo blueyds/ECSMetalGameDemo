@@ -1,4 +1,5 @@
 import simd
+import SwiftMatrix
 public class TransformComponent: Component{
     public var entity: Entity? = nil
     static public let typeID: Int = Manager.getNewComponentTypeID()

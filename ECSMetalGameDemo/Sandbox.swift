@@ -1,4 +1,5 @@
 import SwiftUI
+import GameColor
 
 class Sandbox: SceneProtocol{
     let player: Entity
@@ -11,21 +12,21 @@ class Sandbox: SceneProtocol{
         player = manager.addNewEntity()
 	let cameraEntity = manager.addNewEntity()
 
-		player.add(component: TransformComponent(x: 0, y: 0))
-	player.add(component: TriangleComponent(color: .purple))
+	let _ = player.add(component: TransformComponent(x: 0, y: 0))
+	let _ = player.add(component: TriangleComponent(color: .purple))
 	addNewTile(x: -1, y: 0, color: .red)
 	addNewTile(x: 0, y: 0, color: .blue)
 	addNewTile(x: -1, y: -1, color: .yellow)
 	addNewTile(x: 0, y: -1, color: .green)
-		cameraEntity.add(component: TransformComponent(x: 0, y: 0))
+		let _ = 	cameraEntity.add(component: TransformComponent(x: 0, y: 0))
 		//let transform:TransformComponent = cameraEntity.get()!
 		//transform.scale = SIMD3(repeating: 0.1)
 		camera = cameraEntity.add(component: CameraComponent(scaledBy: SIMD3(0.5, 0.5, 1)))
 }
 	func addNewTile(x: Float, y: Float, color: SIMD4<Float>){
 		let tile = manager.addNewEntity()
-		tile.add(component: TransformComponent(x: x, y: y, z: 0.9))
-		tile.add(component: QuadComponent(color: color))
+		let _ = tile.add(component: TransformComponent(x: x, y: y, z: 0.9))
+		let _ = tile.add(component: QuadComponent(color: color))
 	}
     func setupECS(){
         

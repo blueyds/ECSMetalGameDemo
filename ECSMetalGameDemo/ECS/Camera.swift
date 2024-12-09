@@ -7,6 +7,7 @@
 
 import Foundation
 import simd
+import SwiftMatrix
 
 public protocol Camera: Component{
 	var viewMatrix: Matrix { get set }

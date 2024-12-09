@@ -7,13 +7,13 @@ public protocol Component: AnyObject{
 	func preDraw() // mostly used to update final matrix calculations foor
 	 // drawing outside of the actuall draw cycle
 
-    func draw(renderer: Renderer)
+    func draw(renderer: any Renderer)
 }
 
 extension Component{
     public func setup(){}
     public func update() {}
 	public func preDraw() {}
-    public func draw(renderer: Renderer){}
+    public func draw(renderer: any Renderer){}
 }
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D19BC3E22D0696E500726104 /* SwiftMatrix in Frameworks */ = {isa = PBXBuildFile; productRef = D19BC3E12D0696E500726104 /* SwiftMatrix */; };
+		D1BD44E02D03FCD200C3F34C /* GameColor in Frameworks */ = {isa = PBXBuildFile; productRef = D1BD44DF2D03FCD200C3F34C /* GameColor */; };
+		D1BD44E62D03FDC200C3F34C /* Sizeable in Frameworks */ = {isa = PBXBuildFile; productRef = D1BD44E52D03FDC200C3F34C /* Sizeable */; };
 		D1EE7AFB2D00B26300E7AEA1 /* MetalView in Frameworks */ = {isa = PBXBuildFile; productRef = D1EE7AFA2D00B26300E7AEA1 /* MetalView */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +60,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1EE7AFB2D00B26300E7AEA1 /* MetalView in Frameworks */,
+				D19BC3E22D0696E500726104 /* SwiftMatrix in Frameworks */,
+				D1BD44E02D03FCD200C3F34C /* GameColor in Frameworks */,
+				D1BD44E62D03FDC200C3F34C /* Sizeable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +125,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				D19BC3E42D06970600726104 /* PBXTargetDependency */,
+				D1BD44EC2D03FE0D00C3F34C /* PBXTargetDependency */,
+				D1BD44E82D03FE0400C3F34C /* PBXTargetDependency */,
 				D1EE7AFD2D00B26F00E7AEA1 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
@@ -127,6 +136,9 @@
 			name = ECSMetalGameDemo;
 			packageProductDependencies = (
 				D1EE7AFA2D00B26300E7AEA1 /* MetalView */,
+				D1BD44DF2D03FCD200C3F34C /* GameColor */,
+				D1BD44E52D03FDC200C3F34C /* Sizeable */,
+				D19BC3E12D0696E500726104 /* SwiftMatrix */,
 			);
 			productName = ECSMetalGameDemo;
 			productReference = D1EE7AAD2D00AF3700E7AEA1 /* ECSMetalGameDemo.app */;
@@ -212,6 +224,9 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				D1EE7AF82D00B24A00E7AEA1 /* XCRemoteSwiftPackageReference "MetalView" */,
+				D1BD44DE2D03FCD200C3F34C /* XCRemoteSwiftPackageReference "SwiftGameColor" */,
+				D1BD44E42D03FDC200C3F34C /* XCRemoteSwiftPackageReference "Sizeable" */,
+				D19BC3E02D0696E500726104 /* XCRemoteSwiftPackageReference "SwiftMatrix" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D1EE7AAE2D00AF3700E7AEA1 /* Products */;
@@ -274,6 +289,18 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D19BC3E42D06970600726104 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = D19BC3E32D06970600726104 /* SwiftMatrix */;
+		};
+		D1BD44E82D03FE0400C3F34C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = D1BD44E72D03FE0400C3F34C /* GameColor */;
+		};
+		D1BD44EC2D03FE0D00C3F34C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = D1BD44EB2D03FE0D00C3F34C /* Sizeable */;
+		};
 		D1EE7AC02D00AF3A00E7AEA1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D1EE7AAC2D00AF3700E7AEA1 /* ECSMetalGameDemo */;
@@ -565,6 +592,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D19BC3E02D0696E500726104 /* XCRemoteSwiftPackageReference "SwiftMatrix" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/blueyds/SwiftMatrix";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.9;
+			};
+		};
+		D1BD44DE2D03FCD200C3F34C /* XCRemoteSwiftPackageReference "SwiftGameColor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/blueyds/SwiftGameColor.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
+		D1BD44E42D03FDC200C3F34C /* XCRemoteSwiftPackageReference "Sizeable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/blueyds/Sizeable.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		D1EE7AF82D00B24A00E7AEA1 /* XCRemoteSwiftPackageReference "MetalView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/blueyds/MetalView.git";
@@ -576,6 +627,36 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D19BC3E12D0696E500726104 /* SwiftMatrix */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D19BC3E02D0696E500726104 /* XCRemoteSwiftPackageReference "SwiftMatrix" */;
+			productName = SwiftMatrix;
+		};
+		D19BC3E32D06970600726104 /* SwiftMatrix */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D19BC3E02D0696E500726104 /* XCRemoteSwiftPackageReference "SwiftMatrix" */;
+			productName = SwiftMatrix;
+		};
+		D1BD44DF2D03FCD200C3F34C /* GameColor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D1BD44DE2D03FCD200C3F34C /* XCRemoteSwiftPackageReference "SwiftGameColor" */;
+			productName = GameColor;
+		};
+		D1BD44E52D03FDC200C3F34C /* Sizeable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D1BD44E42D03FDC200C3F34C /* XCRemoteSwiftPackageReference "Sizeable" */;
+			productName = Sizeable;
+		};
+		D1BD44E72D03FE0400C3F34C /* GameColor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D1BD44DE2D03FCD200C3F34C /* XCRemoteSwiftPackageReference "SwiftGameColor" */;
+			productName = GameColor;
+		};
+		D1BD44EB2D03FE0D00C3F34C /* Sizeable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D1BD44E42D03FDC200C3F34C /* XCRemoteSwiftPackageReference "Sizeable" */;
+			productName = Sizeable;
+		};
 		D1EE7AFA2D00B26300E7AEA1 /* MetalView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D1EE7AF82D00B24A00E7AEA1 /* XCRemoteSwiftPackageReference "MetalView" */;

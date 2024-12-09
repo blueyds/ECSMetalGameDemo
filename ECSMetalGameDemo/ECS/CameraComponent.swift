@@ -1,4 +1,5 @@
 import simd
+import SwiftMatrix
 
 public class CameraComponent: Component, Camera{
 	public var projectionScale: SIMD3<Float>

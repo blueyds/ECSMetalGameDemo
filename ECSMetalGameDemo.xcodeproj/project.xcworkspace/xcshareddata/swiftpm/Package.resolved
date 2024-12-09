@@ -1,5 +1,5 @@
 {
-  "originHash" : "fb044bb5d07503b31f98094258aa177746c735bb73a2740f4e2dfcfd1f2cde35",
+  "originHash" : "fa1a4681be2432f356d10564955369dc41e2f52fcaa7ba63376e21f97712c90c",
   "pins" : [
     {
       "identity" : "metalview",
@@ -8,6 +8,33 @@
       "state" : {
         "revision" : "947f4574b604ecfa57e01a5a5b64b4aef460eefd",
         "version" : "6.0.11"
+      }
+    },
+    {
+      "identity" : "sizeable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/blueyds/Sizeable.git",
+      "state" : {
+        "revision" : "71ebfe1c5375f0d536b1859868d3ce889aee6206",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "swiftgamecolor",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/blueyds/SwiftGameColor.git",
+      "state" : {
+        "revision" : "06f3509f93964f4f5fd2e90552f8849e26a04551",
+        "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "swiftmatrix",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/blueyds/SwiftMatrix",
+      "state" : {
+        "revision" : "409cc275efb6ba85f70d5f88bab563d5b1b3532b",
+        "version" : "1.0.9"
       }
     }
   ],

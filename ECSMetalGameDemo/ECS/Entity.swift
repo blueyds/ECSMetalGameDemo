@@ -18,7 +18,7 @@ public class Entity:Identifiable{
 			component.preDraw()
 		}
 	}
-    public func draw(renderer: Renderer){
+    public func draw(renderer: any Renderer){
         components.forEach{_, component in
             component.draw(renderer: renderer)    
         }
